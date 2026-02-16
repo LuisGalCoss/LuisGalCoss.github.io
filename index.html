@@ -5,118 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./output.css" rel="stylesheet">
     <title>Luis Galvan | Portafolio Mecatrónica</title>
     <meta name="description" content="Portafolio de Luis Galvan, Ingeniero en Mecatrónica especializado en automatización, diseño de producto y tecnología.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     
-    <style> 
-        body { 
-            font-family: 'Inter', sans-serif;
-            transition: background-color 0.8s ease;
-        
-        } 
 
-/* --- ANIMACIONES DE ESCRITURA --- */
-
-/* Animación principal: Escritura, Pausa y Borrado */
-@keyframes typing {
-    0% { width: 0; }
-    20% { width: 6.8ch; } /* Escribe "Hola, " o "Mundo." */
-    23% { width: 6.8ch; } /* Pausa de lectura */
-    49%, 50% { width: 0; } /* Borrado rápido para el cambio de palabra */
-    70% { width: 6.8ch; } /* Escribe la segunda palabra */
-    73% { width: 6.8ch; } /* Pausa de lectura */
-    99%, 100% { width: 0; } /* Borrado final del ciclo */
-}
-
-/* Cambio de contenido del texto */
-@keyframes changeText {
-    0%, 49% { content: ">-Hola,"; }
-    50%, 100% { content: "Mundo."; }
-}
-
-/* Parpadeo del cursor */
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* Clase principal para el texto */
-.typewriter-text {
-    display: inline-block;
-    overflow: hidden;
-    border-right: 4px solid #2563eb;
-    white-space: nowrap;
-    padding-right: 8px;
-    letter-spacing: 0.1em;
-    width: 0;
-    vertical-align: middle;
-    /* Ambas animaciones duran lo mismo (8s) para mantener sincronía total */
-    animation: 
-        typing 8s steps(6) infinite, 
-        blink 0.7s infinite;
-}
-
-.typewriter-text::after {
-    content: ">Hola, ";
-    animation: changeText 8s infinite;
-}
-
-/* Soporte específico para iPad 4 (iOS 10.3) */
-@-webkit-keyframes typing {
-    0% { width: 0; }
-    20% { width: 6.8ch; }
-    23% { width: 6.8ch; }
-    49%, 50% { width: 0; }
-    70% { width: 6.8ch; }
-    73% { width: 6.8ch; }
-    99%, 100% { width: 0; }
-}
-
-@-webkit-keyframes changeText {
-    0%, 49% { content: ">-Hola"; }
-    50%, 100% { content: "Mundo."; }
-}
-
-.typewriter-text {
-    -webkit-animation: typing 8s steps(6) infinite, blink 0.7s infinite;
-}
-
-        /* --- ANIMACIONES BOTONES --- */
-        @keyframes ghostClick {
-            0%, 45% { transform: translateY(0); box-shadow: 0 4px 0 0 rgba(0,0,0,1); }
-            50% { transform: translateY(4px); box-shadow: none; }
-            55%, 100% { transform: translateY(0); box-shadow: 0 4px 0 0 rgba(0,0,0,1); }
-        }
-
-        @keyframes textToggle {
-            0%, 24% { content: "Prototyping"; }
-            25%, 74% { content: "Impresión 3D"; }
-            75%, 100% { content: "Prototyping"; }
-        }
-
-        .anim-fast {
-            animation: ghostClick 2.5s infinite ease-in-out;
-        }
-
-        .anim-toggle {
-            animation: ghostClick 4s infinite ease-in-out;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .anim-toggle::after {
-            content: "Prototyping";
-            animation: textToggle 8s infinite steps(1);
-        }
-
-
-
-
-
-
-    </style>
 
 
     <script>
@@ -155,15 +49,17 @@
                                               <!--         HEADER -->
 
 
-<header class="snap-center  flex flex-col w-full max-w-4xl min-w-0 mx-auto font-sans">
+<header id="header" class="snap-center  flex flex-col  max-w-4xl min-w-0 mx-auto font-sans w-fit sm:w-full ">
     
 
                  <!--         icono corazon -->
 
     <div class="flex justify-end items-center p-2 gap-1.5
      bg-slate-100 rounded-t-xl ring-1 ring-slate-300 shadow-sm border-2
-      border-black border-b-0 z-10 relative">
-        <p class="text-slate-700 text-[10px] flex items-center gap-1 tracking-widest uppercase font-bold">
+      border-black border-b-0 z-10 relative
+      ">
+
+        <p class="text-slate-700 text-[10px] flex  items-center gap-1 tracking-widest uppercase font-bold ">
             made with 
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="#EF4444"/>
@@ -174,9 +70,9 @@
                   <!--         logotipo -->
 
 
-    <div class="flex flex-col justify-center items-center md:flex-row md:justify-between md:items-end w-full px-6 py-4
+    <div class="flex flex-col justify-center items-center md:flex-row md:justify-between md:items-end  px-6 py-4
                 bg-slate-300 text-black border-2 border-black rounded-b-xl 
-                shadow-[0_3px_0_0_rgba(0,0,0,1)] mb-8">
+                shadow-[0_3px_0_0_rgba(0,0,0,1)] mb-8 gap-2">
             
         <div class="flex items-center gap-x-4 mb-4 md:mb-0">
             
@@ -197,17 +93,15 @@
 
 
         <nav class="flex flex-wrap justify-center gap-3 text-sm font-bold pb-1">
-            <a href="#inicio" class="px-1 py-2 bg-white text-black rounded-lg border-2 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
-                Inicio
+            <a href="#inicio" class="px-1 py-2 bg-white text-black rounded-lg border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:bg-blue-50 hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
+                > Hola c : 
             </a>
-            <a href="#proyectos" class="px-1 py-2 bg-white text-black rounded-lg border-2 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-blue-50 hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
+            <a href="#proyectos" class="px-1 py-2 bg-white text-black rounded-lg border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:bg-blue-50 hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
                 Proyectos
             </a>
-            <a href="#habilidades" class="px-1 py-2 bg-white text-black rounded-lg border-2 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-blue-50 hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
-                Servicios
-            </a>
-            <a href="#contacto" class="px-1 py-2 bg-white text-black rounded-lg border-2 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-blue-600 hover:text-white hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
-                Contacto
+
+            <a href="#Habilidades" class="px-1 py-2 bg-white text-black rounded-lg border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:bg-blue-50 hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
+                Habilidades
             </a>
         </nav>
 
@@ -218,7 +112,7 @@
                                           <!--         MAIN -->
 
 
-    <main id="inicio" class="flex flex-grow flex-col 
+    <main  class="flex flex-grow flex-col 
                             justify-between items-center 
                             gap-8 min-w-0 w-full max-w-6xl">
 
@@ -662,6 +556,10 @@
 
 
     </main>
+
+    <a href="#header" class="px-4 py-4 bg-white text-black rounded-lg border-2 border-black shadow-[4px_4px_0_0_rgba(0,0,0,1)] hover:bg-blue-50 hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
+                > Volver al inicio c : 
+            </a>
 
     <footer class=" snap-center w-full max-w-4xl mt-6 mb-4 bg-white text-black border-2 border-black rounded-xl shadow-[0_3px_0_0_rgba(0,0,0,1)] py-6 px-6 text-center">
         <div class="max-w-5xl mx-auto font-mono text-sm">
