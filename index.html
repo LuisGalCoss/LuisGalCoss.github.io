@@ -3,34 +3,6 @@
 
 
 
-<script>
-    const container = document.getElementById('marquee-container');
-    const btnGrid = document.getElementById('btn-grid');
-    const btnMarquee = document.getElementById('btn-marquee');
-
-    // Función para activar Modo Estático (Flex-row)
-    btnGrid.addEventListener('click', () => {
-        container.classList.remove('animate-marquee', 'whitespace-nowrap');
-        container.classList.add('flex-wrap', 'justify-center');
-        
-        // Feedback visual en botones
-        btnGrid.classList.add('bg-blue-400');
-        btnMarquee.classList.remove('bg-yellow-400');
-        btnMarquee.classList.add('bg-white');
-    });
-
-    // Función para regresar a Modo Animado
-    btnMarquee.addEventListener('click', () => {
-        container.classList.add('animate-marquee', 'whitespace-nowrap');
-        container.classList.remove('flex-wrap', 'justify-center');
-        
-        // Feedback visual en botones
-        btnMarquee.classList.add('bg-yellow-400');
-        btnGrid.classList.remove('bg-blue-400');
-        btnGrid.classList.add('bg-white');
-    });
-</script>
-
 
 
 <head>
@@ -112,7 +84,7 @@
 
 
         <nav class="flex flex-wrap justify-center gap-4 text-sm font-semibold pb-1"><!--         importante tipo de letra del header -->
-            <a href="#readme" class="px-1 py-2 bg-white text-black rounded-lg border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:bg-blue-50 hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
+            <a href="#readme" class="px-1 py-2 bg-white     text-black rounded-lg border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:bg-blue-50 hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
                 > Hola c : 
             </a>
             <a href="#proyectos" class="px-1 py-2 bg-white text-black rounded-lg border-2 border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] hover:bg-blue-50 hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all">
@@ -145,7 +117,7 @@
                 <div class="w-3 h-3 rounded-full bg-red-400 border border-red-500"></div>
                 <div class="w-3 h-3 rounded-full bg-amber-400 border border-amber-500"></div>
                 <div class="w-3 h-3 rounded-full bg-green-400 border border-green-500"></div>
-                <h1 class="text-lg ml-1 text-slate-700 ">README.txt </h1>
+                <h1 class="text-md ml-1 text-slate-700 ">README.txt </h1>
             </div>
 
                               <!--         Presentacion HOLA -->
@@ -441,37 +413,6 @@
         </div>
 
 
-        <script>
-    // Usamos esto para que el script espere a que el HTML esté listo
-    document.addEventListener('DOMContentLoaded', () => {
-        const caja = document.getElementById('marquee-container');
-        const bGrid = document.getElementById('btn-grid');
-        const bAnimar = document.getElementById('btn-marquee');
-
-        // Al presionar "VER TODO"
-        bGrid.addEventListener('click', () => {
-            // Quitamos lo que hace que se mueva
-            caja.classList.remove('animate-marquee', 'whitespace-nowrap');
-            // Ponemos lo que hace que se acomoden uno tras otro
-            caja.classList.add('flex-wrap', 'justify-center');
-            
-            // Cambiamos colores de los botones para que se note cuál está activo
-            bGrid.style.backgroundColor = '#60a5fa'; // Azul
-            bAnimar.style.backgroundColor = '#ffffff'; // Blanco
-        });
-
-        // Al presionar "ANIMAR"
-        bAnimar.addEventListener('click', () => {
-            // Regresamos a la normalidad
-            caja.classList.add('animate-marquee', 'whitespace-nowrap');
-            caja.classList.remove('flex-wrap', 'justify-center');
-            
-            // Regresamos colores originales
-            bAnimar.style.backgroundColor = '#facc15'; // Amarillo
-            bGrid.style.backgroundColor = '#ffffff'; // Blanco
-        });
-    });
-</script>
 
         <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-300 to-transparent z-10 pointer-events-none"></div>
         <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-300 to-transparent z-10 pointer-events-none"></div>
@@ -490,11 +431,12 @@
                                           <!--         PROYECTOS DESTACADOS -->
 
         <section id="proyectos" class="snap-start  flex flex-col gap-0 w-full p-0">
-            <div class="flex items-center p-2 gap-1 bg-slate-100 rounded-t-xl ring-1 ring-slate-300 shadow-sm border-2 border-black border-b-0">
+            <div class="flex items-center p-2 gap-1 bg-slate-100 rounded-t-xl 
+            ring-1 ring-slate-300 shadow-sm border-2 border-black border-b-0">
                 <div class="w-3 h-3 rounded-full bg-red-400 border border-red-500"></div>
                 <div class="w-3 h-3 rounded-full bg-amber-400 border border-amber-500"></div>
                 <div class="w-3 h-3 rounded-full bg-green-400 border border-green-500"></div>
-                <h1 class="text-lg ml-1 text-slate-700 font-mono w-full pl-2 text-left">> Proyectos destacados</h1>
+                <h1 class=" ml-1 text-slate-700 font-mono w-full pl-2 text-left">Proyectos destacados</h1>
             </div>
 
             <div class="flex flex-col items-start justify-between sm:flex-row bg-slate-300 border-2 border-black rounded-b-xl shadow-[0_3px_0_0_rgba(0,0,0,1)] overflow-hidden p-3 gap-5">
@@ -552,7 +494,7 @@
                 <div class="w-3 h-3 rounded-full bg-red-400 border border-red-500"></div>
                 <div class="w-3 h-3 rounded-full bg-amber-400 border border-amber-500"></div>
                 <div class="w-3 h-3 rounded-full bg-green-400 border border-green-500"></div>
-                <h1 class="text-lg ml-1 text-slate-700 font-mono w-full pl-2 text-left">> Proyectos recientes</h1>
+                <h1 class="text-lg ml-1 text-slate-700 font-mono w-full pl-2 text-left">Proyectos recientes</h1>
             </div>
 
             <div class="flex flex-col items-start justify-between sm:flex-row bg-slate-300 border-2 border-black rounded-b-xl shadow-[0_3px_0_0_rgba(0,0,0,1)] overflow-hidden p-3 gap-5">
@@ -710,7 +652,7 @@
                 <div class="w-3 h-3 rounded-full bg-red-400 border border-red-500"></div>
                 <div class="w-3 h-3 rounded-full bg-amber-400 border border-amber-500"></div>
                 <div class="w-3 h-3 rounded-full bg-green-400 border border-green-500"></div>
-                <h1 class="text-lg ml-1 text-slate-700 font-mono w-full pl-2 text-left">> Experiencia</h1>
+                <h1 class="text-lg ml-1 text-slate-700 font-mono w-full pl-2 text-left">Experiencia</h1>
             </div>
 
             <div class="flex flex-col items-start justify-between sm:flex-row bg-slate-300 border-2 border-black rounded-b-xl shadow-[0_3px_0_0_rgba(0,0,0,1)] overflow-hidden p-3 gap-5">
