@@ -2,6 +2,37 @@
 <html class="scroll-smooth snap-y snap-proximity" lang="es">
 
 
+
+<script>
+    const container = document.getElementById('marquee-container');
+    const btnGrid = document.getElementById('btn-grid');
+    const btnMarquee = document.getElementById('btn-marquee');
+
+    // Función para activar Modo Estático (Flex-row)
+    btnGrid.addEventListener('click', () => {
+        container.classList.remove('animate-marquee', 'whitespace-nowrap');
+        container.classList.add('flex-wrap', 'justify-center');
+        
+        // Feedback visual en botones
+        btnGrid.classList.add('bg-blue-400');
+        btnMarquee.classList.remove('bg-yellow-400');
+        btnMarquee.classList.add('bg-white');
+    });
+
+    // Función para regresar a Modo Animado
+    btnMarquee.addEventListener('click', () => {
+        container.classList.add('animate-marquee', 'whitespace-nowrap');
+        container.classList.remove('flex-wrap', 'justify-center');
+        
+        // Feedback visual en botones
+        btnMarquee.classList.add('bg-yellow-400');
+        btnGrid.classList.remove('bg-blue-400');
+        btnGrid.classList.add('bg-white');
+    });
+</script>
+
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +54,10 @@
 
 <body class="p-4 flex flex-col min-h-screen items-center gap-6
              bg-blue-100 min-w-0 font-mono selection:bg-black selection:text-white">
+
+ 
+
+
 
 
 
@@ -240,6 +275,15 @@
         </section>
 
 
+<div class="flex items-center p-2 gap-2 bg-slate-100 rounded-t-xl ring-1 ring-slate-300 border-2 border-black border-b-0">
+    <button id="btn-grid" class="px-3 py-1 bg-white border border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-xs font-bold active:shadow-none active:translate-x-[1px] active:translate-y-[1px]">
+        VER TODO
+    </button>
+    
+    <button id="btn-marquee" class="px-3 py-1 bg-yellow-400 border border-black shadow-[2px_2px_0_0_rgba(0,0,0,1)] text-xs font-bold active:shadow-none active:translate-x-[1px] active:translate-y-[1px]">
+        ANIMAR
+    </button>
+</div>
 
 
                                     <!--                  SOFTWares -->
@@ -256,8 +300,8 @@
     
     <div class="relative flex items-center  py-8 w-full bg-slate-300">
         
-        <div class="flex animate-marquee items-start whitespace-nowrap items-center gap-10 sm:gap-24 px-12">
 
+        <div id='marquee-container' class="flex animate-marquee  whitespace-nowrap  gap-10 sm:gap-24 ">
 
            <!--                  DEBUG           <div class="flex  animate-marquee whitespace-nowrap items-center gap-10 sm:gap-24 px-12"></div>                  SOFTWares -->
             
@@ -395,6 +439,39 @@
             
 
         </div>
+
+
+        <script>
+    // Usamos esto para que el script espere a que el HTML esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+        const caja = document.getElementById('marquee-container');
+        const bGrid = document.getElementById('btn-grid');
+        const bAnimar = document.getElementById('btn-marquee');
+
+        // Al presionar "VER TODO"
+        bGrid.addEventListener('click', () => {
+            // Quitamos lo que hace que se mueva
+            caja.classList.remove('animate-marquee', 'whitespace-nowrap');
+            // Ponemos lo que hace que se acomoden uno tras otro
+            caja.classList.add('flex-wrap', 'justify-center');
+            
+            // Cambiamos colores de los botones para que se note cuál está activo
+            bGrid.style.backgroundColor = '#60a5fa'; // Azul
+            bAnimar.style.backgroundColor = '#ffffff'; // Blanco
+        });
+
+        // Al presionar "ANIMAR"
+        bAnimar.addEventListener('click', () => {
+            // Regresamos a la normalidad
+            caja.classList.add('animate-marquee', 'whitespace-nowrap');
+            caja.classList.remove('flex-wrap', 'justify-center');
+            
+            // Regresamos colores originales
+            bAnimar.style.backgroundColor = '#facc15'; // Amarillo
+            bGrid.style.backgroundColor = '#ffffff'; // Blanco
+        });
+    });
+</script>
 
         <div class="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-slate-300 to-transparent z-10 pointer-events-none"></div>
         <div class="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-slate-300 to-transparent z-10 pointer-events-none"></div>
@@ -721,5 +798,9 @@
         </div>
     </footer>
 
+
+
+
+<script src="js/scripts.js"></script>
 </body>
 </html>
