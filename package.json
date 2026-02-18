@@ -6,10 +6,5 @@
   "scripts": {
     "dev": "npx @tailwindcss/cli -i ./input.css -o ./output.css --watch",
     "build": "npx @tailwindcss/cli -i ./input.css -o ./output.css --minify"
-  },
-  "devDependencies": {
-    "gh-pages": "^6.3.0"
   }
-
-
 }
